@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/pcsmomo/meidish-api#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
     "concurrently": "^7.0.0",
     "express": "^4.17.2",
     "mongo": "^0.1.0",

@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import chalk from "chalk";
 import "./db/mongoose";
 
 const app = express();
@@ -9,5 +10,5 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log("Server is on port " + port);
+  console.log(chalk.blue.italic("Server is on port " + port));
 });

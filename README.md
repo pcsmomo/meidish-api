@@ -32,9 +32,12 @@
    1. env-cmd
       `npm install --save-dev env-cmd`
    2. chalk
+      `npm install --save chalk@^4`
    3. morgan
    4. bcryptjs
    5. jsonwebtoken
    6. validator
 
-5. Connect to AWS S3 for images
+5. testing setup
+
+6. Connect to AWS S3 for images
