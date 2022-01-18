@@ -29,10 +29,12 @@
 
 4. install utilities
 
-   1. chalk
-   2. morgan
-   3. bcryptjs
-   4. jsonwebtoken
-   5. validator
+   1. env-cmd
+      `npm install --save-dev env-cmd`
+   2. chalk
+   3. morgan
+   4. bcryptjs
+   5. jsonwebtoken
+   6. validator
 
 5. Connect to AWS S3 for images

@@ -6,7 +6,7 @@
   "scripts": {
     "start:build": "tsc -w",
     "start:run": "nodemon build/index.js",
-    "dev": "concurrently npm:start:*",
+    "dev": "env-cmd -f ./config/dev.env concurrently npm:start:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
-    "@types/node": "^17.0.9"
+    "@types/node": "^17.0.9",
+    "env-cmd": "^10.1.0"
   }
 }
