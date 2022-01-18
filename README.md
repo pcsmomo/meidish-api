@@ -22,13 +22,16 @@
 
 3. Install Mongoose and set it up
 
+   - `npm install --save mongo mongoose`
+   - Run mongodb server via docker
+     - `docker run --name mongodb --rm -d -p 27017:27017 -v meidish-mongo:/data/db mongo`
    - mongodb atlas
 
 4. install utilities
 
    1. chalk
    2. morgan
-   3. bcryptjs=
+   3. bcryptjs
    4. jsonwebtoken
    5. validator
 
