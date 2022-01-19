@@ -34,6 +34,8 @@
    2. chalk
       `npm install --save chalk@^4`
    3. morgan
+      - `npm install --save morgan`
+      - `npm install --save-dev @types/morgan`
    4. bcryptjs
    5. jsonwebtoken
    6. validator
