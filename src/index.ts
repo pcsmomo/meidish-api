@@ -3,7 +3,9 @@ import fs from "fs";
 import path from "path";
 import chalk from "chalk";
 import morgan from "morgan";
+
 import "./db/mongoose";
+import { userRouter } from "./routers/user";
 
 const app = express();
 const port = process.env.PORT;
@@ -29,6 +31,9 @@ app.use(
 app.get("/", (req: Request, res: Response) => {
   res.send("Hi there");
 });
+
+app.use(express.json());
+app.use(userRouter);
 
 app.listen(port, () => {
   console.log(chalk.blue.italic("Server is on port " + port));
