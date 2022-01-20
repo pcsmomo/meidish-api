@@ -108,3 +108,4 @@ build
 
 # Configuration file
 dev.env
+test.env
