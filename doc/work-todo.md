@@ -9,7 +9,7 @@
    1. User - CRUD
    2. Dishes - CRUD
 
-3. setup testing environment
+3. setup database for testing
 
 4. password encoding
 
