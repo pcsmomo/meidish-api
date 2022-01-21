@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/pcsmomo/meidish-api#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "chalk": "^4.1.2",
     "concurrently": "^7.0.0",
     "express": "^4.17.2",
@@ -31,6 +32,7 @@
     "nodemon": "^2.0.15"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "@types/node": "^17.0.9",

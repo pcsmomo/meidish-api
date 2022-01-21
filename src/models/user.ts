@@ -1,4 +1,6 @@
+import { NextFunction } from "express";
 import { Document, Model, model, Schema } from "mongoose";
+import bcrypt from "bcrypt";
 
 interface UserType {
   name: string;
@@ -40,5 +42,17 @@ const userSchema = new Schema<UserDocument, UserModel>(
     timestamps: true,
   }
 );
+
+// Hash the plain text password before saving
+// Must use a stand function to bind, not an arrow function
+userSchema.pre<UserDocument>("save", async function (next) {
+  const user = this;
+
+  if (user.isModified("password")) {
+    user.password = await bcrypt.hash(user.password, 10);
+  }
+
+  next();
+});
 
 export const User = model<UserDocument, UserModel>("User", userSchema);

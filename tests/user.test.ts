@@ -26,6 +26,6 @@ describe("User model and router", () => {
       email: "noah@example.com",
     });
 
-    // expect(user!.password).not.toBe("pa123!@#");
+    expect(user!.password).not.toBe("pa123!@#");
   });
 });

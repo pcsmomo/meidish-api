@@ -37,6 +37,8 @@
       - `npm install --save morgan`
       - `npm install --save-dev @types/morgan`
    4. bcryptjs
+      - `npm install --save bcrypt`
+      - `npm install --save-dev @types/bcrypt`
    5. jsonwebtoken
    6. validator
 
