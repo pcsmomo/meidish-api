@@ -8,15 +8,6 @@ interface UserType {
   password: string;
 }
 
-/**
- * Not directly exported because it is not recommended to
- * use this interface direct unless necessary
- */
-export interface UserDocument extends UserType, Document {}
-
-// For model
-export interface UserModel extends Model<UserDocument> {}
-
 const userSchema = new Schema<UserDocument, UserModel>(
   {
     name: {
@@ -42,6 +33,36 @@ const userSchema = new Schema<UserDocument, UserModel>(
     timestamps: true,
   }
 );
+
+/**
+ * Not directly exported because it is not recommended to
+ * use this interface direct unless necessary
+ */
+export interface UserDocument extends UserType, Document {}
+
+// For model
+export interface UserModel extends Model<UserDocument> {
+  findByCredentials(email: string, password: string): Promise<UserDocument>;
+}
+
+// .statics. : Model Methods for uppser case User model
+userSchema.statics.findByCredentials = async (
+  email: string,
+  password: string
+): Promise<UserDocument> => {
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    throw new Error("Unable to login");
+  }
+
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    throw new Error("Unable to login");
+  }
+
+  return user;
+};
 
 // Hash the plain text password before saving
 // Must use a stand function to bind, not an arrow function

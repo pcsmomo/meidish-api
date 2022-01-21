@@ -28,4 +28,14 @@ describe("User model and router", () => {
 
     expect(user!.password).not.toBe("pa123!@#");
   });
+
+  it("should login existing user", async () => {
+    const response = await request(app)
+      .post("/users/login")
+      .send({
+        email: userOne.email,
+        password: userOne.password,
+      })
+      .expect(200);
+  });
 });
