@@ -42,4 +42,10 @@
 
 5. testing setup
 
+   1. jest
+      - `npm install --save-dev jest ts-jest`
+      - [Testing with jest in TypeScript](https://itnext.io/testing-with-jest-in-typescript-cc1cd0095421)
+   2. supertest
+      `npm install --save-dev supertest @types/supertest`
+
 6. Connect to AWS S3 for images
