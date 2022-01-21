@@ -15,5 +15,17 @@ describe("User model and router", () => {
         password: "pa123!@#",
       })
       .expect(201);
+
+    // Assert that the database was changed correctly
+    const user = await User.findById(response.body.user._id);
+    expect(user).not.toBeNull();
+
+    // Assert the response
+    expect(user).toMatchObject({
+      name: "Noah",
+      email: "noah@example.com",
+    });
+
+    // expect(user!.password).not.toBe("pa123!@#");
   });
 });

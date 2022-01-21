@@ -9,10 +9,8 @@
    1. User - CRUD
    2. Dishes - CRUD
 
-3. setup database for testing
+3. password encoding
 
-4. password encoding
+4. email validation
 
-5. email validation
-
-6. password validation
+5. password validation
