@@ -29,9 +29,9 @@ describe("User model and router", () => {
     expect(user!.password).not.toBe("pa123!@#");
   });
 
-  it("should login existing user", async () => {
+  it("should sign in existing user", async () => {
     const response = await request(app)
-      .post("/users/login")
+      .post("/users/signin")
       .send({
         email: userOne.email,
         password: userOne.password,

@@ -32,7 +32,7 @@
 			"response": []
 		},
 		{
-			"name": "Login user",
+			"name": "Sign in user",
 			"event": [
 				{
 					"listen": "test",
@@ -62,13 +62,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/users/login",
+					"raw": "{{url}}/users/signin",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"users",
-						"login"
+						"signin"
 					]
 				}
 			},

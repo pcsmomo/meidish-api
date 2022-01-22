@@ -18,9 +18,9 @@ userRouter.post(
   }
 );
 
-// Log in
+// Sign in
 userRouter.post(
-  "/users/login",
+  "/users/signin",
   async (req: Request, res: Response): Promise<void> => {
     try {
       const user = await User.findByCredentials(
