@@ -9,7 +9,7 @@
    1. User - CRUD
    2. Dishes - CRUD
 
-3. password encoding
+3. fix the test case to pass and add non-existing user login test
 
 4. email validation
 

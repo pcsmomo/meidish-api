@@ -11,7 +11,10 @@ userRouter.post(
 
     try {
       await user.save();
-      res.status(201).send({ user });
+
+      const token = await user.generateAuthToken();
+
+      res.status(201).send({ user, token });
     } catch (e) {
       res.status(400).send(e);
     }
@@ -27,7 +30,9 @@ userRouter.post(
         req.body.email,
         req.body.password
       );
-      res.send({ user });
+      const token = await user.generateAuthToken();
+
+      res.send({ user, token });
     } catch (e) {
       res.status(400).send();
     }

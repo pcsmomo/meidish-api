@@ -40,6 +40,8 @@
       - `npm install --save bcrypt`
       - `npm install --save-dev @types/bcrypt`
    5. jsonwebtoken
+      - `npm install --save jsonwebtoken`
+      - `npm install --save-dev @types/jsonwebtoken`
    6. validator
 
 5. testing setup
