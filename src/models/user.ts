@@ -43,8 +43,8 @@ interface Token {
 interface UserType {
   name: string;
   email: string;
-  password: string;
-  tokens: Token[];
+  password?: string;
+  tokens?: Token[];
 }
 
 /**
@@ -63,7 +63,24 @@ export interface UserModel extends Model<UserDocument> {
   findByCredentials(email: string, password: string): Promise<UserDocument>;
 }
 
-// .methods. : this methods is used by user instances
+// .methods. : Instance Methods for individual instance
+// way 1. basic way to get public profile
+// userSchema.methods.getPublicProfile = function () {
+// way 2 to get public profile using toJSON()
+userSchema.methods.toJSON = function (
+  this: UserBaseDocument
+): UserBaseDocument {
+  const user = this;
+
+  // Converts this document into a plain old JavaScript object (POJO).
+  const userObject = user.toObject();
+
+  delete userObject.password;
+  delete userObject.tokens;
+
+  return userObject;
+};
+
 // No arrow function. It needs to be bound
 userSchema.methods.generateAuthToken = async function (
   this: UserBaseDocument
